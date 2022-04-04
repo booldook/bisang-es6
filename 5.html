@@ -1,0 +1,24 @@
+<script>
+	const weather = {
+		city: [
+			{ id: 1, name: '서울', forecast: '맑음' },
+			{ id: 2, name: '대전', forecast: '흐림' },
+			{ id: 3, name: '부산', forecast: '비' },
+		],
+	};
+
+	// const pusanForecast = weather.city[2].forecast;
+	// const pusanForecast = [...weather.city];
+	const getPusanWeather = ({ city }) => {
+		let [, , { forecast }] = city;
+		return forecast;
+	};
+
+	console.log(getPusanWeather(weather));
+
+	const { city } = weather;
+	// const [, { forecast }] = city;
+	const [, { forecast: daejeonForecast }, { forecast: pusanForecast }] = city;
+	console.log(daejeonForecast);
+	console.log(pusanForecast);
+</script>

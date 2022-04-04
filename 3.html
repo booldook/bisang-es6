@@ -1,0 +1,22 @@
+<script>
+	// arrow function
+	function x() {}
+	const a = function () {};
+	const b = () => {};
+
+	function zeroPlus(n) {
+		return n < 10 ? '0' + n : String(n);
+	}
+
+	console.log(zeroPlus(8));
+
+	const zeroPlus2 = n => ({ value: n < 10 ? '0' + n : String(n) });
+	console.log(zeroPlus2(8));
+
+	const arr = [1, 2, 3, 4, 5];
+	/* const arr2 = arr.map(function (v) {
+		return v * v;
+	}); */
+	const arr2 = arr.map(v => v * v);
+	console.log(arr2);
+</script>

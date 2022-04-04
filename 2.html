@@ -1,0 +1,27 @@
+<script>
+	function Human() {
+		this.name = 'booldook';
+	}
+
+	Human.prototype.myName = function () {
+		return this.name;
+	};
+
+	const booldook = new Human();
+	booldook.name = '홍길동';
+	console.log(booldook.myName());
+	// console.log(booldook);
+
+	class Human2 {
+		constructor() {
+			this.name = 'booldook';
+		}
+		myName() {
+			return this.name;
+		}
+	}
+
+	const human2 = new Human2();
+	human2.name = '홍길만';
+	console.log(human2.myName());
+</script>

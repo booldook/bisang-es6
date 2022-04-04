@@ -1,0 +1,45 @@
+<script>
+	console.log(this); // window
+	console.log(globalThis); // nodejs
+	// ES6
+	// var -> let, const
+	// class
+	// arrow function
+	// spread operation
+	// 구조분해할당
+	// set/map
+	// string ->
+	// lodash ->
+	a();
+
+	var a = 10;
+	var a = 20;
+
+	function a() {
+		console.log('A');
+	}
+
+	const b = function () {
+		console.log('B');
+	};
+	b();
+
+	for (let i = 0; i < 10; i++) {
+		console.log(i);
+	}
+
+	// primmitve: String, Number, Boolean, undefined
+	// reference: Array, Object, null
+
+	const arr = [];
+	arr[1] = 10;
+	console.log(arr);
+
+	const obj = {
+		a: 1,
+	};
+
+	obj.a = 2;
+
+	console.log(obj.a);
+</script>

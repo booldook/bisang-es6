@@ -1,0 +1,29 @@
+<script>
+	// 펼침연산자, 구조분해할당
+	/* const arr = [1, 2, 3, 4, 5];
+	const arr2 = arr.slice();
+	arr2[1] = 22;
+	console.log(arr, arr2);
+
+	const obj = {
+		name: '홍길동',
+		age: 24,
+	};
+	const obj2 = obj;
+	obj2.name = '홍길순';
+	console.log(obj, obj2); */
+
+	// ES6
+	const arr = [1, 2, 3, 4, 5];
+	const arr2 = [...arr];
+	arr2[1] = 22;
+	console.log(arr, arr2);
+
+	const obj = {
+		name: '홍길동',
+		age: 24,
+	};
+	const obj2 = { ...obj };
+	obj2.name = '홍길순';
+	console.log(obj, obj2);
+</script>

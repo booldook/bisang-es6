@@ -1,0 +1,60 @@
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script
+	src="https://code.jquery.com/jquery-3.6.0.min.js"
+	integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+	crossorigin="anonymous"
+></script>
+
+<script>
+	const url = 'https://jsonplaceholder.typicode.com/posts';
+
+	$.get(url, function (response) {
+		// console.log(response);
+	});
+
+	$.get(url)
+		.then(function (response) {
+			// console.log(response);
+		})
+		.catch(function (err) {
+			console.log(err);
+		});
+
+	// axios
+	// function getData(url) {
+	// 	// console.log($.get(url));
+	// 	axios
+	// 		.get(url)
+	// 		.then(response => {
+	// 			return axios.get(
+	// 				'https://jsonplaceholder.typicode.com/users/' +
+	// 					response.data[0].userId
+	// 			);
+	// 		})
+	// 		.then(response => {
+	// 			console.log(response.data.email);
+	// 		})
+	// 		.catch(err => {
+	// 			console.log(err);
+	// 		});
+	// }
+
+	function getData(url) {
+		// console.log($.get(url));
+		axios
+			.get(url)
+			.then(({ data }) => {
+				return axios.get(
+					'https://jsonplaceholder.typicode.com/users/' + data[0].userId
+				);
+			})
+			.then(({ data }) => {
+				console.log(data.email);
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	}
+
+	getData('https://jsonplaceholder.typicode.com/posts');
+</script>

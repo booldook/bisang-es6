@@ -1,0 +1,36 @@
+<script>
+	// callback, promise, async/await
+
+	function sum(a, b, fn) {
+	  fn(a + b);
+	}
+
+	sum(10, 20, function(v) {
+	  console.log(v)
+	})
+
+	db.connection(function(connect) {
+	  connect.query('SELECT...', function(rs) {
+	    listView(rs, function() {
+
+	    })
+	  })
+	})
+
+	// callback
+	$.get('https://...', function(response) {
+	  response
+	})
+
+	// promise
+	$.get('https://...')
+	.then(function() {
+
+	})
+	.catch(function() {
+
+	})
+
+	// async/await
+	const response = await axios('http://...');
+</script>

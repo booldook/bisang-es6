@@ -1,0 +1,53 @@
+<script>
+	// Object
+	const user = {
+		name: '홍길동',
+		age: 25,
+		kor: 80,
+		eng: 75,
+		math: 85,
+	};
+
+	const values = Object.values(user);
+	console.log(values);
+
+	const keys = Object.keys(user);
+	console.log(keys);
+
+	const entries = Object.entries(user);
+	console.log(entries);
+
+	// for, for ~ in, for ~ of
+	const arr = [1, 2, 3, 4, 5];
+	for (let i in arr) {
+		console.log(arr[i]);
+	}
+	for (let v of arr) {
+		console.log(v);
+	}
+
+	const arr2 = arr.map(function (v, i, a) {
+		return { value: v, index: i, array: a };
+	});
+
+	console.log(arr2);
+
+	const arr3 = arr.filter((v, i) => {
+		return v > 3;
+	});
+	console.log(arr3);
+
+	arr.forEach((v, i) => {
+		console.log(v, i);
+	});
+
+	// arr.filter()
+	// arr.some()
+	// arr.every()
+	// arr.forEach()
+
+	for (let [key, value] of Object.entries(user)) {
+		// [[key, value], [key, value], [key, value]]
+		console.log(key, value);
+	}
+</script>

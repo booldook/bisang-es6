@@ -18,7 +18,12 @@
 
 	const { city } = weather;
 	// const [, { forecast }] = city;
-	const [, { forecast: daejeonForecast }, { forecast: pusanForecast }] = city;
+	const [
+		{ forecast: seoulForecast },
+		{ forecast: daejeonForecast },
+		{ forecast: pusanForecast },
+	] = city;
+	console.log(seoulForecast);
 	console.log(daejeonForecast);
 	console.log(pusanForecast);
 </script>

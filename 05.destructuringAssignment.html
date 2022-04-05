@@ -9,11 +9,12 @@
 
 	// const pusanForecast = weather.city[2].forecast;
 	// const pusanForecast = [...weather.city];
-	const getPusanWeather = ({ city }) => {
+
+	/* const getPusanWeather = ({ city }) => {
 		let [, , { forecast }] = city;
 		return forecast;
-	};
-
+	}; */
+	const getPusanWeather = ({ city: [, , { forecast }] }) => forecast;
 	console.log(getPusanWeather(weather));
 
 	const { city } = weather;

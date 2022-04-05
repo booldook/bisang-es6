@@ -1,0 +1,38 @@
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	// https://jsonplaceholder.typicode.com/
+	const postsUrl = 'https://jsonplaceholder.typicode.com/posts';
+	const usersUrl = 'https://jsonplaceholder.typicode.com/users';
+	const postUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+	const userUrl = 'https://jsonplaceholder.typicode.com/users/1';
+
+	async function getData(_id) {
+		try {
+			const {
+				data: { id, userId, title, body },
+			} = await axios.get(`${postsUrl}/${_id}`);
+			const {
+				data: { name, email, username },
+			} = await axios.get(`${usersUrl}/${userId}`);
+			console.log(id, userId, title, body, name, email, username);
+		} catch (err) {
+			console.log(err);
+		}
+	}
+
+	console.log(getData(3));
+
+	/* axios
+		.get(postUrl)
+		.then(({ data, header }) => {
+			const { id, userId, title, body } = data;
+			return userId
+		})
+		.then(userId => {
+			return axios.get(`${usersUrl}/${userId}`)
+		})
+		.catch(err => {
+			console.log(err);
+		}); */
+</script>

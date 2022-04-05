@@ -50,4 +50,81 @@
 		// [[key, value], [key, value], [key, value]]
 		console.log(key, value);
 	}
+
+	// Array Methods
+	// map, filter, reduce, forEach, every, some, includes, isArray, join, pop(), push(), shift(), unshift(), key(), values() ...
+	// find, at ...
+
+	console.clear();
+	function sum() {
+		const arg = Array.from(arguments);
+		console.log(arguments);
+		return Array.isArray(arg);
+	}
+
+	console.log(new Array());
+	console.log(sum(1, 2, 3));
+
+	console.log('booldook'.length);
+	console.log(Array.from('booldook'));
+
+	console.log(Array.of('A', 'B', 'C'));
+
+	const fruits = ['Apple', 'Lemon', 'Banana'];
+
+	console.log(fruits.includes('Lemon'));
+
+	const str = 'Hello World';
+	console.log(str.includes('lo'));
+
+	const res = fruits.forEach((v, i) => {
+		v = '과일_' + v;
+	});
+	console.log(res);
+
+	const res2 = fruits.map((v, i) => {
+		return '과일_' + v;
+	});
+	console.log(res2);
+
+	const users = [
+		{ id: 1, name: '홍길동', age: 56 },
+		{ id: 2, name: '홍길만', age: 28 },
+		{ id: 3, name: '홍길', age: 38 },
+		{ id: 4, name: '홍길룡', age: 18 },
+		{ id: 5, name: '홍길이', age: 25 },
+		{ id: 6, name: '홍길삼', age: 48 },
+	];
+
+	const over35 = users.filter(({ age }) => age >= 35);
+	console.log(over35);
+
+	const is35 = users.every(({ age }) => age >= 35); // 모두가 true => true
+	console.log(is35);
+
+	const is35_2 = users.some(({ age }) => age >= 35); // 하나라도 true => true
+	console.log(is35_2);
+
+	console.clear();
+	const set = new Set();
+	set.add('A');
+	set.add('B');
+	set.add('C');
+	set.add('A');
+	set.delete('C');
+	set.add('B');
+	set.add(function aa() {});
+	console.log(set);
+
+	const map = new Map();
+
+	map.set('booldook', { name: '임덕규', age: 25 });
+	map.set('boolbook', { name: '임덕팔', age: 35 });
+	console.log(map.get('booldook'));
+
+	console.log(map.has('boolbool'));
+
+	for (let [key, value] of map) {
+		console.log(key, value);
+	}
 </script>

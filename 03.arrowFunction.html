@@ -67,4 +67,40 @@
 
 	console.log(sum2(1, 2, 3, 4, 5));
 	console.log(sum3(1, 2, 3, 4, 5));
+
+	function retrieve(query, fn) {
+		// 서버 데이터를 받아서 결과를 리턴
+		const result = 'AAA';
+		setTimeout(() => {
+			fn(result);
+		}, 1000);
+	}
+
+	// const retrieve = new Retrieve();
+	// retrieve.getValue()
+
+	const obj3 = {
+		toutFn() {
+			window.setTimeout(function () {
+				console.log('toutFn', this);
+			}, 0); // window
+		},
+		toutFn2() {
+			window.setTimeout(() => {
+				console.log('toutFn2', this);
+			}, 0); // obj
+		},
+		toutFn3() {
+			window.setTimeout(
+				function () {
+					console.log('toutFn3', this);
+				}.bind(this), // obj
+				0
+			);
+		},
+	};
+
+	obj3.toutFn();
+	obj3.toutFn2();
+	obj3.toutFn3();
 </script>

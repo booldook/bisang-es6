@@ -38,8 +38,63 @@
 	const obj = {
 		a: 1,
 	};
-
 	obj.a = 2;
-
 	console.log(obj.a);
+
+	// 함수 파라메터 기본값
+	// ES5
+	function fn(a, b) {
+		a = a || 0;
+		b = b || 0;
+		return a + b;
+	}
+	console.log(fn(10));
+	// ES6
+	const fn2 = (a = 0, b = 0) => a + b;
+	console.log(fn2(10));
+
+	// Literal 객체, 생성자 객체
+	const obj5 = {
+		a: 1,
+		b: 2,
+	};
+	// console.log(new obj());
+
+	function Obj5() {
+		this.a = 10;
+	}
+	console.log(new Obj5());
+
+	console.clear();
+	// ES5 객체
+	var num = 1;
+	var str = 'memo';
+	var buy = function () {
+		console.log('BUY');
+	};
+	var book = {
+		sell: function () {
+			console.log('SELL');
+		},
+		buy: buy,
+	};
+	book['math' + num] = '수학1';
+	book['kor_' + str] = '국어' + str;
+	book['sell'](); // book.buy();
+	book.sell();
+	console.log(book);
+
+	//ES6
+	const buy2 = () => console.log('BUY');
+	const book2 = {
+		sell2() {
+			console.log('SELL');
+		},
+		buy2,
+		['math' + num]: '수학' + num,
+		['kor_' + str]: '국어' + str,
+	};
+	book2.buy2();
+	book2.sell2();
+	console.log(book2);
 </script>

@@ -24,4 +24,90 @@
 	const human2 = new Human2();
 	human2.name = '홍길만';
 	console.log(human2.myName());
+
+	// 상속 - ES5
+	function Product(name, price) {
+		this.name = name;
+		this.price = price;
+	}
+
+	function Book(name, price, cate) {
+		Product.call(this, name, price);
+		this.name = name;
+		this.price = price;
+		this.cate = cate;
+	}
+	console.log(new Book());
+
+	// 상속 - ES6
+	class Product2 {
+		constructor(name, price) {
+			this.name = name;
+			this.price = price;
+		}
+	}
+	class Book2 extends Product2 {
+		constructor(name = '', price = '', cate = '') {
+			super(name, price);
+			this.cate = cate;
+		}
+	}
+	console.log(new Book2());
+
+	class chgKorDate extends Date {
+		getValue() {
+			console.log(this);
+		}
+		getKorFormat() {
+			const months = [
+				'1월',
+				'2월',
+				'3월',
+				'4월',
+				'5월',
+				'6월',
+				'7월',
+				'8월',
+				'9월',
+				'10월',
+				'11월',
+				'12월',
+			];
+			return (
+				this.getFullYear() +
+				'년 ' +
+				months[this.getMonth()] +
+				' ' +
+				this.getDate() +
+				'일'
+			);
+		}
+	}
+
+	console.log(new chgKorDate('2020-11-12 13:55:22').getKorFormat());
+
+	// Literal ==> constructor
+
+	const user = {
+		firstName: '',
+		lastName: '홍',
+		getName: function () {
+			console.log(this); // user
+		},
+		getName2() {
+			console.log(this); // user
+		},
+		getName3: () => {
+			console.log(this); // window
+		},
+	};
+	const hkd = Object.create(user);
+	const hks = Object.create(user);
+	hkd.firstName = '길동';
+	hks.firstName = '길순';
+	console.log(hkd, hks);
+
+	user.getName();
+	user.getName2();
+	user.getName3();
 </script>

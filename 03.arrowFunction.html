@@ -19,4 +19,52 @@
 	}); */
 	const arr2 = arr.map(v => v * v);
 	console.log(arr2);
+
+	console.clear();
+
+	function sum() {
+		console.log(Array.isArray(arguments));
+		// console.log();
+		/* Array.prototype.myFn = function () {
+			console.log('myFn');
+		}; */
+
+		const myArr = new Array();
+		myArr[0] = 'A';
+		myArr[1] = 'B';
+		console.log(myArr);
+
+		for (let i = 0; i < myArr.length; i++) {
+			console.log(myArr[i]);
+		}
+		for (let i in myArr) {
+			console.log(myArr[i]);
+		}
+		for (let v of myArr) {
+			console.log(v);
+		}
+
+		for (let i = 0; i < arguments.length; i++) {
+			console.log(arguments[i]);
+		}
+		for (let i in arguments) {
+			console.log(arguments[i]);
+		}
+		for (let v of arguments) {
+			console.log(v);
+		}
+	}
+
+	sum(1, 2, 3, 4, 5, 6);
+
+	function sum2(...arg) {
+		return arg.reduce(function (prev, curr) {
+			return prev + curr;
+		}, 0);
+	}
+
+	const sum3 = (...arg) => arg.reduce((prev, curr) => prev + curr, 0);
+
+	console.log(sum2(1, 2, 3, 4, 5));
+	console.log(sum3(1, 2, 3, 4, 5));
 </script>

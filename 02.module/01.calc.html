@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>계산기</title>
+  </head>
+  <body>
+    <script type="module">
+      import calc, {sum, multi} from './01.calc.js';
+
+      console.log(calc.sum(1, 2, 3, 4, 5));
+      console.log(calc.multi(1, 2, 3, 4, 5));
+      console.log(sum(1, 2, 3, 4, 5));
+      console.log(multi(1, 2, 3, 4, 5));
+    </script>
+  </body>
+</html>
